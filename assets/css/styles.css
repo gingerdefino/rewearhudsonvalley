@@ -1,16 +1,16 @@
 :root {
   /* Brand colors */
-  --color-primary-dark: #3A1A4A;
-  --color-primary: #6A3A7A;
-  --color-primary-warm: #5A1E1E;
+  --color-primary-dark: #4A1719;
+  --color-primary: #402F8E;
+  --color-primary-warm: #4A1719;
 
-  --color-accent: #D4A72C;
-  --color-accent-dark: #8A5A2E;
+  --color-accent: #BD9E3D;
+  --color-accent-dark: #977718;
 
-  --color-neutral-light: #F5F1E8;
-  --color-neutral-lighter: #FAF8F3;
+  --color-neutral-light: #EDE8E2;
+  --color-neutral-lighter: #F2EFEB;
 
-  --color-text-dark: #1A1A1A;
+  --color-text-dark: #4A1719;
   --color-text-light: #FFFFFF;
 
   --space-xs: 0.5rem;
