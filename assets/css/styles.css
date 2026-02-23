@@ -258,7 +258,9 @@ main {
 
 .card-image {
   width: calc(100% + 2 * var(--space-m));
-  margin: calc(-1 * var(--space-m));
+  margin-left: calc(-1 * var(--space-m));
+  margin-right: calc(-1 * var(--space-m) - 4px);
+  margin-top: calc(-1 * var(--space-m));
   margin-bottom: var(--space-m);
   display: block;
   object-fit: cover;
