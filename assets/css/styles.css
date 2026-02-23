@@ -253,6 +253,15 @@ main {
   padding: var(--space-m);
   box-shadow: 0 6px 16px rgba(0,0,0,0.04);
   border-left: 4px solid var(--color-accent);
+  overflow: hidden;
+}
+
+.card-image {
+  width: calc(100% + 2 * var(--space-m));
+  margin: calc(-1 * var(--space-m)) calc(-1 * var(--space-m)) var(--space-m) calc(-1 * var(--space-m));
+  display: block;
+  object-fit: cover;
+  height: 12rem;
 }
 
 .card h3 {
