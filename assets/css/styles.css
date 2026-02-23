@@ -257,14 +257,12 @@ main {
 }
 
 .card-image {
-  width: calc(100% + 2 * var(--space-m));
-  margin-left: calc(-1 * var(--space-m));
-  margin-right: calc(-1 * var(--space-m) - 4px);
-  margin-top: calc(-1 * var(--space-m));
-  margin-bottom: var(--space-m);
+  width: 100%;
   display: block;
   object-fit: cover;
   height: 16rem;
+  border-radius: var(--radius-m);
+  margin-bottom: var(--space-m);
 }
 
 .card h3 {
