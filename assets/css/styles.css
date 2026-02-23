@@ -207,7 +207,7 @@ main {
 
 .section-inner {
   max-width: var(--max-width);
-  margin: 0 auto;
+  margin: var(--space-l);
 }
 
 /* Hero */
@@ -216,9 +216,8 @@ main {
   min-height: 70vh;
   padding: var(--space-xl) 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
-
+    align-items: flex-start;
+    justify-content: flex-start;
   background-color: var(--color-neutral-light);
   background-image: url("../../images/rewear-hv-bg.png");
   background-size: cover;
@@ -229,7 +228,7 @@ main {
 }
 
 .hero-title {
-  font-size: clamp(2.64rem, 5.28vw, 3.7rem);
+  font-size: clamp(2.2rem, 4.4vw, 3.08rem);
   margin-bottom: var(--space-s);
   color: var(--color-primary-warm);
 }
