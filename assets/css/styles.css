@@ -320,7 +320,6 @@ main {
 /* Tags */
 
 .tag {
-  display: inline-block;
   padding: 0.15rem 0.6rem;
   border-radius: 999px;
   background: var(--color-accent);
@@ -329,6 +328,12 @@ main {
   font-weight: 500;
   margin-right: var(--space-xs);
   margin-bottom: var(--space-m);
+}
+
+.tag-container {
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-xs);
 }
 
 /* Buttons */
