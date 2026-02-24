@@ -365,11 +365,14 @@ main {
   font-weight: 500;
   margin-right: var(--space-xs);
   margin-bottom: var(--space-m);
+  display: flex;
+  flex-direction: row;
 }
 
 .tag-container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: var(--space-xs);
 }
 
