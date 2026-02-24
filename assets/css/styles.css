@@ -279,7 +279,7 @@ main {
     border-radius: var(--radius-s);
   }
   .resource-list .card-image {
-    height: 8rem;
+    height: 4rem;
     min-width: 0;
     width: 100%;
     object-fit: cover;
@@ -290,7 +290,8 @@ main {
 .card-grid {
   display: grid;
   gap: var(--space-m);
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  align-items: start;
 }
 
 @media (max-width: 767px) {
@@ -314,11 +315,7 @@ main {
 }
 
 
-@media (min-width: 768px) {
-  .card-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
+/* larger breakpoint handled by auto-fit grid above */
 
 .card {
   background: var(--color-neutral-lighter);
@@ -449,7 +446,21 @@ main {
   grid-template-columns: 1fr;
 }
 
-@media (min-width: 768px) {
+.resource-list .card-image {
+  width: 100%;
+  height: 3rem;
+  object-fit: cover;
+  border-radius: var(--radius-m);
+  margin-bottom: var(--space-m);
+}
+
+@media (min-width: 1024px) {
+  .resource-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
   .resource-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
