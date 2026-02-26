@@ -1,0 +1,14 @@
+---
+const { title, img, alt, tags = [], href } = Astro.props;
+---
+
+<article class="card">
+  <img src={img} alt={alt} class="card-image" />
+  <h3>{title}</h3>
+  <div class="tag-container">
+    {tags.map(tag => (
+      <span class="tag">{tag}</span>
+    ))}
+  </div>
+  <a href={href} class="button small" target="_blank">Visit Site</a>
+</article>

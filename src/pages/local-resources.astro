@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LocalResourceCard from '../components/LocalResourceCard.astro';
+---
+
+<BaseLayout title="Local Resources">
+  <section class="section" aria-labelledby="resources-heading">
+    <div class="section-inner">
+      <h1 id="resources-heading">Local resources</h1>
+      <p>
+        A growing list of shops, repair services, community organizations, and educational resources in the Hudson Valley.
+      </p>
+
+      <ul class="resource-list">
+        <li>
+          <LocalResourceCard
+            title="HV Sustainable Fashion Week"
+            img="/hvsfw.jpg"
+            alt="Hudson Valley Sustainable Fashion Week"
+            tags={["Fashion Show", "Events", "Workshops", "Blog", "Donate"]}
+            href="https://www.hvsfw.org/"
+          />
+        </li>
+
+        <li>
+          <LocalResourceCard
+            title="Made X Hudson"
+            img="/madexhudson.jpg"
+            alt="Made X Hudson"
+            tags={["Shop", "Events", "Workshops", "Classes", "Repair"]}
+            href="https://madexhudson.com/"
+          />
+        </li>
+
+        <li>
+          <LocalResourceCard
+            title="Faithfully Yours"
+            img="/faithfullyyours.png"
+            alt="Faithfully Yours"
+            tags={["Shop", "Workshops", "Classes", "Blog", "Repair", "Donate"]}
+            href="https://www.faithfullyyoursatelier.com/"
+          />
+        </li>
+
+        <li>
+          <LocalResourceCard
+            title="Katrina Rodabaugh"
+            img="/katarina.jpg"
+            alt="Katrina Rodabaugh"
+            tags={["Shop", "Workshops"]}
+            href="https://www.katrinarodabaugh.com/"
+          />
+        </li>
+
+        <li>
+          <LocalResourceCard
+            title="Hudson Valley Stitch Witch"
+            img="/hvstitchwitch.png"
+            alt="Hudson Valley Stitch Witch"
+            tags={["Events", "Workshops", "Classes"]}
+            href="https://www.hvstitchwitch.com/"
+          />
+        </li>
+
+        <li>
+          <LocalResourceCard
+            title="Repair Café Hudson Valley"
+            img="/repaircafe.jpg"
+            alt="Repair Café Hudson Valley"
+            tags={["Repair", "Community", "Events"]}
+            href="https://repaircafe.org/"
+          />
+        </li>
+
+        <li>
+          <LocalResourceCard
+            title="ReThreads Hudson Valley"
+            img="/rethreads.jpg"
+            alt="ReThreads Hudson Valley"
+            tags={["Shop", "Donate", "Repair"]}
+            href="#"
+          />
+        </li>
+
+        <li>
+          <LocalResourceCard
+            title="Hudson Valley Textile Lab"
+            img="/textilelab.jpg"
+            alt="Hudson Valley Textile Lab"
+            tags={["Workshops", "Classes", "Repair"]}
+            href="#"
+          />
+        </li>
+
+        <li>
+          <LocalResourceCard
+            title="Stitch & Sip Poughkeepsie"
+            img="/stitchsip.jpg"
+            alt="Stitch and Sip Poughkeepsie"
+            tags={["Events", "Workshops"]}
+            href="#"
+          />
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <div>
+    <img src="/clothes-line.png" alt="Row of clothes with Hudson Valley image as the pattern" class="hero-image">
+  </div>
+</BaseLayout>
