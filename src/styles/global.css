@@ -46,6 +46,19 @@ body {
   line-height: 1.6;
 }
 
+h1,
+h2 {
+  font-family: "riant-display", "Alexandria", system-ui, sans-serif;
+}
+
+h1 {
+  font-size: calc(2em + 1rem);
+}
+
+h2 {
+  font-size: calc(1.5em + 1rem);
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -238,14 +251,14 @@ main {
 }
 
 .hero-title {
-  font-size: clamp(2.64rem, 5.28vw, 3.7rem);
+  font-size: clamp(3.14rem, 5.78vw, 4.2rem);
   margin-bottom: var(--space-s);
   color: var(--color-primary-warm);
 }
 
 .hero-subtitle {
   max-width: 32rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: var(--color-primary-warm);
 }
 
