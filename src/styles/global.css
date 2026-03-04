@@ -292,7 +292,7 @@ main {
     border-radius: var(--radius-s);
   }
   .resource-list .card-image {
-    height: 4rem;
+    height: 5rem;
     min-width: 0;
     width: 100%;
     object-fit: cover;
@@ -353,7 +353,7 @@ main {
   width: 100%;
   display: block;
   object-fit: cover;
-  height: 16rem;
+  height: 20rem;
   border-radius: var(--radius-m);
   margin-bottom: var(--space-m);
 }

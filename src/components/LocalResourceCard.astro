@@ -1,10 +1,20 @@
 ---
-const { title, img, alt, tags = [], href } = Astro.props;
+interface Props {
+  title: string;
+  img: string;
+  alt: string;
+  tags?: string[];
+  href: string;
+}
+
+const { title, img, alt, tags = [], href } = Astro.props as Props;
 const isExternal = typeof href === 'string' && /^https?:\/\//.test(href);
 ---
 
 <article class="card">
-  <img src={img} alt={alt} class="card-image" />
+  <div class="card-image-wrapper">
+    <img src={img} alt={alt} class="card-image" />
+  </div>
   <h3>{title}</h3>
   <div class="tag-container">
     {tags.map(tag => (
@@ -13,3 +23,26 @@ const isExternal = typeof href === 'string' && /^https?:\/\//.test(href);
   </div>
   <a href={href} class="button small" target={isExternal ? '_blank' : undefined} rel={isExternal ? 'noopener noreferrer' : undefined}>Visit Site</a>
 </article>
+
+<style>
+  .card-image-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: var(--radius-m);
+    overflow: hidden;
+    margin-bottom: var(--space-m);
+  }
+
+  .card-image-wrapper .card-image {
+    margin-bottom: 0;
+  }
+
+  .card-image-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #45328b;
+    opacity: 0.22;
+    pointer-events: none;
+  }
+</style>
