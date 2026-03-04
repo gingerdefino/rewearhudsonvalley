@@ -1,10 +1,11 @@
 ---
+const withBase = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, '')}/${path.replace(/^\//, '')}`;
 ---
 
 <header class="site-header">
   <div class="header-inner">
-    <a href="/" class="site-logo">
-      <img src="/rewear-logo.png" alt="Re-Wear Logo" class="logo-img">
+    <a href={withBase('/')} class="site-logo">
+      <img src={withBase('/rewear-logo.png')} alt="Re-Wear Logo" class="logo-img">
     </a>
     <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
       <span></span>
@@ -13,9 +14,9 @@
     </button>
     <nav class="site-nav">
       <ul>
-        <li><a href="/shop-and-repair">Shop & Repair</a></li>
-        <li><a href="/local-resources">Local Resources</a></li>
-        <li><a href="/about">About</a></li>
+        <li><a href={withBase('/shop-and-repair')}>Shop & Repair</a></li>
+        <li><a href={withBase('/local-resources')}>Local Resources</a></li>
+        <li><a href={withBase('/about')}>About</a></li>
       </ul>
     </nav>
   </div>

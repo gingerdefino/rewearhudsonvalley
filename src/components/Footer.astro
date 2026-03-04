@@ -1,18 +1,19 @@
 ---
+const withBase = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, '')}/${path.replace(/^\//, '')}`;
 ---
 
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-content">
       <div class="footer-logo">
-        <a href="/">
-          <img src="/rewear-logo.png" alt="Re-Wear Logo" class="logo-img">
+        <a href={withBase('/')}>
+          <img src={withBase('/rewear-logo.png')} alt="Re-Wear Logo" class="logo-img">
         </a>
       </div>
       <ul class="footer-links">
-        <li><a href="/shop-and-repair">Shop & Repair</a></li>
-        <li><a href="/local-resources">Local Resources</a></li>
-        <li><a href="/about">About</a></li>
+        <li><a href={withBase('/shop-and-repair')}>Shop & Repair</a></li>
+        <li><a href={withBase('/local-resources')}>Local Resources</a></li>
+        <li><a href={withBase('/about')}>About</a></li>
       </ul>
       <div class="footer-social">
         <a href="https://www.instagram.com/rewearhudsonvalley/" title="Follow us on Instagram" target="_blank" rel="noopener noreferrer">
