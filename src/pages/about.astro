@@ -4,7 +4,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const withBase = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, '')}/${path.replace(/^\//, '')}`;
 ---
 
-<BaseLayout title="About">
+<BaseLayout
+  title="About"
+  instagramFollow={{
+    heading: 'Stay in the loop!',
+    description: 'Follow Re:Wear on Instagram to be notified of events, workshops and news surrounding sustainable fashion in the Hudson Valley Community.',
+    buttonLabel: 'Follow Re:Wear on Instagram',
+    buttonHref: 'https://www.instagram.com/rewearhudsonvalley/',
+    imageSrc: withBase('/insta-follow-08.png'),
+    imageAlt: 'Instagram follow graphic showing Re:Wear Hudson Valley with a red collage background and clothing rack image',
+  }}
+>
   <section class="section">
     <div class="section-inner">
       <h1>About Re‑Wear</h1>

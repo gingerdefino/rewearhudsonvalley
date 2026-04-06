@@ -5,12 +5,22 @@ import LocalResourceCard from '../components/LocalResourceCard.astro';
 const withBase = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, '')}/${path.replace(/^\//, '')}`;
 ---
 
-<BaseLayout title="Local Resources">
+<BaseLayout
+  title="Community Spotlight"
+  instagramFollow={{
+    heading: 'Stay in the loop!',
+    description: 'Follow Re:Wear on Instagram to be notified of events, workshops and news surrounding sustainable fashion in the Hudson Valley Community.',
+    buttonLabel: 'Follow Re:Wear on Instagram',
+    buttonHref: 'https://www.instagram.com/rewearhudsonvalley/',
+    imageSrc: withBase('/insta-follow-07.png'),
+    imageAlt: 'Instagram follow graphic showing Re:Wear Hudson Valley with a shoes collage',
+  }}
+>
   <section class="section" aria-labelledby="resources-heading">
     <div class="section-inner">
-      <h1 id="resources-heading">Local resources</h1>
+      <h1 id="resources-heading">Community Spotlight</h1>
       <p>
-        A growing list of shops, repair services, community organizations, and educational resources in the Hudson Valley.
+        Find workshops, events, and local organizations championing sustainable fashion.
       </p>
 
       <ul class="resource-list">
@@ -19,8 +29,8 @@ const withBase = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, ''
             title="HV Sustainable Fashion Week"
             img={withBase('/hvsfw.jpg')}
             alt="Hudson Valley Sustainable Fashion Week"
-            tags={["Fashion Show", "Events", "Workshops", "Blog", "Donate"]}
             href="https://www.hvsfw.org/"
+            tags={["Event", "Fashion", "Community"]}
           />
         </li>
 
@@ -29,8 +39,8 @@ const withBase = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, ''
             title="Made X Hudson"
             img={withBase('/madexhudson.jpg')}
             alt="Made X Hudson"
-            tags={["Shop", "Events", "Workshops", "Classes", "Repair"]}
             href="https://madexhudson.com/"
+            tags={["Marketplace", "Local Makers", "Sustainable Goods"]}
           />
         </li>
 
@@ -39,8 +49,8 @@ const withBase = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, ''
             title="Faithfully Yours"
             img={withBase('/faithfullyyours.png')}
             alt="Faithfully Yours"
-            tags={["Shop", "Workshops", "Classes", "Blog", "Repair", "Donate"]}
             href="https://www.faithfullyyoursatelier.com/"
+            tags={["Alterations", "Tailoring", "Atelier"]}
           />
         </li>
 
@@ -49,8 +59,8 @@ const withBase = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, ''
             title="Katrina Rodabaugh"
             img={withBase('/katarina.jpg')}
             alt="Katrina Rodabaugh"
-            tags={["Shop", "Workshops"]}
             href="https://www.katrinarodabaugh.com/"
+            tags={["Visible Mending", "Textile Artist", "Education"]}
           />
         </li>
 
@@ -59,8 +69,8 @@ const withBase = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, ''
             title="Hudson Valley Stitch Witch"
             img={withBase('/hvstitchwitch.png')}
             alt="Hudson Valley Stitch Witch"
-            tags={["Events", "Workshops", "Classes"]}
             href="https://www.hvstitchwitch.com/"
+            tags={["Alterations", "Mending", "Sewing"]}
           />
         </li>
 
@@ -69,8 +79,8 @@ const withBase = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, ''
             title="Repair Café Hudson Valley"
             img={withBase('/repaircafe.jpg')}
             alt="Repair Café Hudson Valley"
-            tags={["Repair", "Community", "Events"]}
             href="https://repaircafe.org/"
+            tags={["Repair Events", "Volunteer", "Circular Economy"]}
           />
         </li>
 
@@ -79,8 +89,8 @@ const withBase = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, ''
             title="Trans Closet of the Hudson Valley"
             img={withBase('/rethreads.jpg')}
             alt="ReThreads Hudson Valley"
-            tags={["Shop", "Donate", "Repair"]}
             href="#"
+            tags={["Clothing Access", "LGBTQ+", "Mutual Aid"]}
           />
         </li>
 
@@ -89,8 +99,8 @@ const withBase = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, ''
             title="Hudson Valley Textile Lab"
             img={withBase('/textilelab.jpg')}
             alt="Hudson Valley Textile Lab"
-            tags={["Workshops", "Classes", "Repair"]}
             href="#"
+            tags={["Workshops", "Natural Dye", "Textiles"]}
           />
         </li>
 
@@ -99,15 +109,12 @@ const withBase = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, ''
             title="Stitch & Sip Poughkeepsie"
             img={withBase('/stitchsip.jpg')}
             alt="Stitch and Sip Poughkeepsie"
-            tags={["Events", "Workshops"]}
             href="#"
+            tags={["Social Sewing", "Beginner Friendly", "Community"]}
           />
         </li>
       </ul>
     </div>
   </section>
 
-  <div>
-    <img src={withBase('/clothes-line.png')} alt="Row of clothes with Hudson Valley image as the pattern" class="hero-image">
-  </div>
 </BaseLayout>

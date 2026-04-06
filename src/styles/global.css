@@ -43,20 +43,38 @@ body {
   font-family: "Alexandria", system-ui, sans-serif;
   background: var(--color-neutral-lighter);
   color: var(--color-text-dark);
+  font-size: 1.125rem;
   line-height: 1.6;
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: "riant-display", "Alexandria", system-ui, sans-serif;
+  line-height: 1.1;
+  font-weight: 700;
+  margin-top: 0;
 }
 
 h1 {
-  font-size: calc(2em + 1rem);
+  font-size: 3.75rem;
+  margin-bottom: 0.5em;
 }
 
 h2 {
-  font-size: calc(1.5em + 1rem);
+  font-size: 2.25rem;
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  font-size: 1.375rem;
+  margin-bottom: 0.5em;
+}
+
+p {
+  font-size: 1.125rem;
+  margin-top: 0;
+  margin-bottom: 1em;
 }
 
 img {
@@ -271,6 +289,99 @@ main {
   }
 }
 
+/* Home page */
+
+.clothesline-loop {
+  width: 100%;
+  overflow: hidden;
+  padding-block: 0.5rem;
+}
+
+.clothesline-track {
+  display: flex;
+  width: max-content;
+  animation: clothesline-scroll 24s linear infinite;
+  will-change: transform;
+}
+
+.clothesline-image {
+  flex: 0 0 auto;
+  width: max(85rem, 150vw);
+  max-width: none;
+  height: auto;
+  display: block;
+  padding-inline: 1.6rem;
+  box-sizing: border-box;
+}
+
+@keyframes clothesline-scroll {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clothesline-track {
+    animation: none;
+  }
+}
+
+.mission-section {
+  padding: var(--space-s) 0 0;
+}
+
+.mission-background {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  overflow: hidden;
+}
+
+.mission-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.mission-copy {
+  position: absolute;
+  left: clamp(1rem, 4vw, 3rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(50%, 32rem);
+  max-width: calc(50% - clamp(1rem, 4vw, 3rem));
+  background: color-mix(in srgb, var(--color-neutral-lighter) 88%, transparent);
+  padding: clamp(1.5rem, 3vw, 2.75rem);
+  border-radius: var(--radius-s);
+}
+
+.mission-copy h2 {
+  margin-top: 0;
+}
+
+.mission-copy p {
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .mission-copy {
+    position: static;
+    transform: none;
+    width: min(100%, 36rem);
+    max-width: none;
+    margin: var(--space-l);
+  }
+
+  .mission-background {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+  }
+}
+
 /* Mission */
 
 .mission-card {
@@ -365,26 +476,6 @@ main {
 
 .card p {
   margin-bottom: var(--space-m);
-}
-
-/* Tags */
-
-.tag {
-  padding: 0.15rem 0.6rem;
-  border-radius: 999px;
-  background: var(--color-accent);
-  color: var(--color-text-dark);
-  font-size: 0.75rem;
-  font-weight: 500;
-  margin-bottom: var(--space-xs);
-}
-
-.tag-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: var(--space-xs);
-  margin-bottom: var(--space-xs);
 }
 
 /* Buttons */

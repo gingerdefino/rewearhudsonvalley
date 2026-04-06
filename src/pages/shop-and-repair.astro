@@ -4,12 +4,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const withBase = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, '')}/${path.replace(/^\//, '')}`;
 ---
 
-<BaseLayout title="Shop & Repair Map">
+<BaseLayout
+  title="Hudson Valley Sustainable Fashion Map"
+  instagramFollow={{
+    heading: 'Stay in the loop!',
+    description: 'Follow Re:Wear on Instagram to be notified of events, workshops and news surrounding sustainable fashion in the Hudson Valley Community.',
+    buttonLabel: 'Follow Re:Wear on Instagram',
+    buttonHref: 'https://www.instagram.com/rewearhudsonvalley/',
+    imageSrc: withBase('/insta-follow-08.png'),
+    imageAlt: 'Instagram follow graphic showing Re:Wear Hudson Valley with a clothing rack collage',
+  }}
+>
   <section class="section">
     <div class="section-inner">
-      <h1>Shop &amp; Repair</h1>
+      <h1>Hudson Valley Sustainable Fashion Map</h1>
       <p>
-        Browse local shops and repair services that support sustainable fashion in the Hudson Valley.
+        From thrift stores to repair shops, find everything you need to shop consciously.
       </p>
 
       <iframe
@@ -24,8 +34,4 @@ const withBase = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, ''
       </iframe>
     </div>
   </section>
-
-  <div>
-    <img src={withBase('/clothes-line.png')} alt="Row of clothes with Hudson Valley image as the pattern" class="hero-image">
-  </div>
 </BaseLayout>

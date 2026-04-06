@@ -3,11 +3,10 @@ interface Props {
   title: string;
   img: string;
   alt: string;
-  tags?: string[];
   href: string;
 }
 
-const { title, img, alt, tags = [], href } = Astro.props as Props;
+const { title, img, alt, href } = Astro.props as Props;
 const isExternal = typeof href === 'string' && /^https?:\/\//.test(href);
 ---
 
@@ -16,11 +15,6 @@ const isExternal = typeof href === 'string' && /^https?:\/\//.test(href);
     <img src={img} alt={alt} class="card-image" />
   </div>
   <h3>{title}</h3>
-  <div class="tag-container">
-    {tags.map(tag => (
-      <span class="tag">{tag}</span>
-    ))}
-  </div>
   <a href={href} class="button small" target={isExternal ? '_blank' : undefined} rel={isExternal ? 'noopener noreferrer' : undefined}>Visit Site</a>
 </article>
 

@@ -4,28 +4,37 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const withBase = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, '')}/${path.replace(/^\//, '')}`;
 ---
 
-<BaseLayout title="Home">
+<BaseLayout
+  title="Home"
+  instagramFollow={{
+    heading: 'Stay in the loop!',
+    description: 'Follow Re:Wear on Instagram to be notified of events, workshops and news surrounding sustainable fashion in the Hudson Valley Community.',
+    buttonLabel: 'Follow Re:Wear on Instagram',
+    buttonHref: 'https://www.instagram.com/rewearhudsonvalley/',
+    imageSrc: withBase('/insta-follow-07.png'),
+    imageAlt: 'Instagram follow graphic showing Re:Wear Hudson Valley with a pair of shoes collage',
+  }}
+>
   <section class="section hero">
     <div class="section-inner">
-      <h1 class="hero-title">Value what you own and build a community that does the same.</h1>
+      <h1 class="hero-title">Discover Hudson Valley's Sustainable Style</h1>
       <p class="hero-subtitle">
         A curated guide to local shops, repair services, and resources that keep clothing in use and out of landfills.
       </p>
     </div>
   </section>
 
-  <div>
-    <img src={withBase('/crop-hv-sew-2.png')} alt="Hudson Valley being sewn together by a needle and thread" class="hero-image">
+  <div class="clothesline-loop" aria-label="Animated clothesline banner">
+    <div class="clothesline-track">
+      <img src={withBase('/clothesline.png')} alt="Row of clothes with Hudson Valley image as the pattern" class="clothesline-image">
+      <img src={withBase('/clothesline.png')} alt="" aria-hidden="true" class="clothesline-image">
+    </div>
   </div>
 
-  <section class="section">
-    <div class="section-inner">
-      <div class="mission-card">
-        <h2>How do we make sustainable fashion the easy choice?</h2>
-        <p>
-          We can do this by valuing our clothing, finding sustainable options nearby, and building a community that shifts
-          from disposable wardrobes to intentional, lasting ones.
-        </p>
+  <section class="section mission-section">
+    <div class="mission-background">
+      <img src={withBase('/sewing-machine-pinkthread.png')} alt="" aria-hidden="true" class="mission-image">
+      <div class="mission-copy">
         <h2>Our mission</h2>
         <p>
           Re:Wear Hudson Valley is a guide to shopping sustainably, repairing clothing, and finding sustainable fashion 
@@ -37,36 +46,232 @@ const withBase = (path: string) => `${import.meta.env.BASE_URL.replace(/\/$/, ''
     </div>
   </section>
 
-  <section class="section" aria-labelledby="featured-shops-heading">
+  <section class="section discover-section" aria-labelledby="featured-shops-heading" style={`--discover-fabric: url(${withBase('/yellow-fabric.jpg')}); --discover-container: url(${withBase('/container.png')})`}>
     <div class="section-inner">
       <h2 id="featured-shops-heading">Discover</h2>
-      <div class="card-grid">
-        <article class="card">
-          <img src={withBase('/shop-2.jpeg')} alt="" class="card-image">
-          <h3>Shops & Businesses</h3>
-          <p>Explore the many sustainable fashion businesses in the Hudson Valley.</p>
-          <a href={withBase('/shop-and-repair')} class="button small">Discover Shops & Businesses</a>
-        </article>
-        <article class="card">
-          <img src={withBase('/swap.JPG')} alt="" class="card-image">
-          <h3>Workshops & Events</h3>
-          <p>Explore workshops and events that teach sustainable fashion practices and repair skills.</p>
-          <a href={withBase('/local-resources')} class="button small">Discover Local Resources</a>
-        </article>
-      </div>
+      <ul class="discover-grid" role="list">
+        <li class="discover-grid__item">
+          <article class="discover-card discover-card--shops">
+            <div class="discover-card__media">
+              <div class="discover-card__image-wrap">
+                <img src={withBase('/index-graphics-03.png')} alt="A hand browsing clothing on a rack" class="discover-card__image">
+              </div>
+              <div class="discover-card__body">
+                <h3>Shops & Businesses</h3>
+                <p>Explore the many sustainable fashion businesses in the Hudson Valley.</p>
+                <a href={withBase('/shop-and-repair')} class="button discover-card__button" aria-label="Explore shops and businesses">Explore Shops & Businesses</a>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li class="discover-grid__item">
+          <article class="discover-card discover-card--events">
+            <div class="discover-card__media">
+              <div class="discover-card__image-wrap">
+                <img src={withBase('/index-graphics-04.png')} alt="A person holding up a dress during a workshop" class="discover-card__image">
+              </div>
+              <div class="discover-card__body">
+                <h3>Workshops & Events</h3>
+                <p>Explore workshops and events that teach sustainable fashion practices and repair skills.</p>
+                <a href={withBase('/local-resources')} class="button discover-card__button" aria-label="Explore workshops and local events">Explore Local Events</a>
+              </div>
+            </div>
+          </article>
+        </li>
+      </ul>
     </div>
   </section>
 
-  <section class="section">
-    <div class="section-inner">
-      <h2>Stay in the Loop</h2>
-      <div class="button-row">
-        <a class="button" href="https://www.instagram.com/rewearhudsonvalley/">Follow Re:Wear on Instagram</a>
-      </div>
-    </div>
-  </section>
-
-  <div>
-    <img src={withBase('/clothes-line.png')} alt="Row of clothes with Hudson Valley image as the pattern" class="hero-image">
-  </div>
 </BaseLayout>
+
+<style>
+  .discover-section {
+    background-image:
+      linear-gradient(rgba(248, 241, 235, 0.42), rgba(248, 241, 235, 0.42)),
+      var(--discover-fabric);
+    background-position: center, center;
+    background-size: cover, cover;
+    background-repeat: no-repeat, no-repeat;
+  }
+
+  .discover-section .section-inner {
+    max-width: 76rem;
+    padding-inline: clamp(1rem, 3vw, 2.5rem);
+  }
+
+  .discover-section h2,
+  .discover-section h1 {
+    margin-bottom: clamp(1.25rem, 2vw, 2rem);
+  }
+
+  .discover-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+    align-items: stretch;
+  }
+
+  .discover-grid__item {
+    min-width: 0;
+  }
+
+  .discover-card {
+    --discover-content-width: min(100%, 30rem);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    min-height: 100%;
+    padding: 0;
+    color: var(--color-primary-dark);
+  }
+
+  .discover-card__media {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.8rem, 1.4vw, 1.15rem);
+    width: 100%;
+    margin: 0;
+    background-image: var(--discover-container);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    padding: clamp(1rem, 1.6vw, 1.35rem) clamp(0.9rem, 1.4vw, 1.2rem) clamp(1.2rem, 1.9vw, 1.6rem);
+    filter: drop-shadow(0 18px 28px rgba(39, 28, 20, 0.22));
+  }
+
+  .discover-card__image-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--discover-content-width);
+    margin-inline: auto;
+    min-height: clamp(15rem, 28vw, 20rem);
+    padding: clamp(0.9rem, 1.4vw, 1.2rem) clamp(0.8rem, 1.2vw, 1rem) clamp(0.25rem, 0.5vw, 0.45rem);
+    transform: rotate(-0.5deg);
+    transform-origin: center;
+    transition: transform 220ms ease;
+  }
+
+  .discover-card--events .discover-card__image-wrap {
+    transform: rotate(0.4deg);
+  }
+
+  .discover-card:hover .discover-card__image-wrap,
+  .discover-card:focus-within .discover-card__image-wrap {
+    transform: rotate(-1.8deg);
+  }
+
+  .discover-card--events:hover .discover-card__image-wrap,
+  .discover-card--events:focus-within .discover-card__image-wrap {
+    transform: rotate(1.9deg);
+  }
+
+  .discover-card__image {
+    width: 100%;
+    max-width: min(100%, 26rem);
+    height: auto;
+    max-height: clamp(15rem, 26vw, 20rem);
+    object-fit: contain;
+    border-radius: 0;
+    filter: saturate(1.03) contrast(1.02);
+  }
+
+  .discover-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.95rem;
+    align-items: flex-start;
+    width: var(--discover-content-width);
+    margin-inline: auto;
+    padding: clamp(0.2rem, 0.4vw, 0.4rem) clamp(1rem, 1.7vw, 1.35rem) clamp(0.25rem, 0.6vw, 0.5rem);
+  }
+
+  .discover-card h3 {
+    margin: 0;
+    font-size: clamp(1.125rem, 2.1vw, 2rem);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+  }
+
+  .discover-card p {
+    margin: 0;
+    max-width: 100%;
+    font-size: clamp(0.875rem, 1.1vw, 1.08rem);
+    line-height: 1.6;
+  }
+
+  .discover-card .button {
+    margin-top: 0.25rem;
+    align-self: stretch;
+    min-width: min(100%, 20rem);
+    min-height: 3.125rem;
+    padding: 0.8rem 1.25rem;
+    border-radius: 999px;
+    font-size: clamp(0.875rem, 1vw, 1rem);
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    box-shadow: 0 8px 0 rgba(50, 34, 120, 0.18);
+  }
+
+  .discover-card .button:hover,
+  .discover-card .button:focus-visible {
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 900px) {
+    .discover-grid {
+      grid-template-columns: 1fr;
+      gap: clamp(1.25rem, 3.5vw, 2rem);
+    }
+
+    .discover-card {
+      max-width: 46rem;
+      margin-inline: auto;
+      padding: 0;
+    }
+  }
+
+  @media (max-width: 540px) {
+    .discover-section .section-inner {
+      padding-inline: clamp(0.8rem, 4vw, 1.2rem);
+    }
+
+    .discover-card {
+      max-width: 100%;
+      gap: 0;
+    }
+
+    .discover-card__media {
+      padding: 0.85rem 0.75rem 1.05rem;
+      gap: 0.7rem;
+    }
+
+    .discover-card__image-wrap {
+      min-height: clamp(12rem, 48vw, 16rem);
+      padding: 0.65rem 0.55rem 0.2rem;
+    }
+
+    .discover-card__image {
+      max-height: clamp(11rem, 45vw, 15rem);
+    }
+
+    .discover-card__body {
+      padding: 0.25rem 0.75rem 0.4rem;
+    }
+
+    .discover-card .button {
+      width: 100%;
+      min-width: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .discover-card__image-wrap {
+      transition: none;
+    }
+  }
+</style>
